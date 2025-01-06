@@ -10,7 +10,7 @@ name: Build JAR and Upload
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
@@ -27,10 +27,10 @@ jobs:
         java-version: '17'
 
     - name: Grant Execute Permission for Gradle
-      run: chmod +x gradlew
+      run: chmod +x ./gradlew
 
     - name: Build Project
-      run: ./gradlew clean jar
+      run: ./gradlew jar
 
     - name: List Generated Files
       run: ls -R build
